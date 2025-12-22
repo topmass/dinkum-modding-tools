@@ -1,0 +1,16 @@
+# Build outputs
+bin/
+obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# NuGet
+packages/
+
+# Game and BepInEx DLLs (copyrighted - users must copy these themselves)
+Libs/*.dll
+!Libs/README.md
