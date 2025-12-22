@@ -1,7 +1,38 @@
 # Dinkum Item IDs - Extracted from Game
-# Generated: 12/22/2025 9:40:23 AM
+# Generated: 12/22/2025 10:19:07 AM
 # Total Inventory Items: 2025
 # Total TileObjects: 988
+
+## Machines (Processing Items)
+
+Items that process/transform other items (furnaces, grinders, cooking stations, etc.)
+
+| Inventory ID | Item Name | TileObject ID | Machine Type | Uses Wind | Uses Solar |
+|--------------|-----------|---------------|--------------|-----------|------------|
+| 13 | BBQ | 22 | Cook | True | False |
+| 18 | Camp Fire | 25 | Cook | False | False |
+| 24 | Cooking Kettle | 838 | Insert | True | True |
+| 27 | Stone Grinder | 21 | Grind | True | False |
+| 115 | Furnace | 50 | Smelt | True | False |
+| 304 | Table Saw | 143 | Saw | False | False |
+| 392 | Keg | 192 | Brew | False | False |
+| 450 | Gacha Machine | 206 | Insert | False | False |
+| 458 | Crude Furnace | 213 | Smelt | False | False |
+| 633 | Spinning Wheel | 293 | Insert | False | False |
+| 635 | Cheese Maker | 294 | Insert | False | False |
+| 703 | Compost Bin | 308 | Insert | False | False |
+| 856 | Charging Station | 362 | Insert | False | True |
+| 860 | Grain Mill | 365 | Insert | True | False |
+| 1120 | Key-Cycler | 822 | Insert | False | True |
+| 1121 | Billy Can Kit | 545 | Brew | False | False |
+| 1188 | Blast Furnace | 581 | Smelt | True | True |
+| 1189 | Improved Table Saw | 582 | Saw | False | False |
+| 1303 | Food Modeller | 643 | Insert | False | False |
+| 1352 | Ice Cream Maker | 690 | Insert | False | False |
+
+*Total machines found: 20*
+
+---
 
 ## Container Items
 
