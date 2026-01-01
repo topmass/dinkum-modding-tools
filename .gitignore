@@ -1,0 +1,27 @@
+# Output/dump files (generated at runtime)
+DUMPED_*.md
+*_DUMP.md
+
+# Spec sheets and internal documentation (keep README.md files only)
+*-specsheet.md
+project-specsheet.md
+
+# Build outputs
+bin/
+obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# NuGet
+packages/
+
+# Game and BepInEx DLLs in codebase (copyrighted - users must copy these themselves)
+**/codebase/Libs/*.dll
+!**/codebase/Libs/README.md
+
+# Keep mod DLLs for distribution
+!**/mod/*.dll
