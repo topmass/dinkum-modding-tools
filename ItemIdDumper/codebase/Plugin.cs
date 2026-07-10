@@ -142,6 +142,47 @@ namespace ItemIdDumper
 
             sb.AppendLine();
 
+            // Section 3b: Full TileObject registry - includes world-only objects (e.g. Ted's Camp)
+            // that no inventory item places, so they never appear in the placeable sections above
+            sb.AppendLine("---");
+            sb.AppendLine();
+            sb.AppendLine("## All TileObjects (World Registry)");
+            sb.AppendLine();
+            sb.AppendLine("Every entry in WorldManager.allObjects, including world-generation-only objects with no inventory item.");
+            sb.AppendLine();
+            sb.AppendLine("| TileObject ID | Prefab Name | Placed By Item ID | Item Name |");
+            sb.AppendLine("|---------------|-------------|-------------------|-----------|");
+
+            System.Collections.Generic.Dictionary<int, int> tileToItem = new System.Collections.Generic.Dictionary<int, int>();
+            for (int i = 0; i < Inventory.Instance.allItems.Length; i++)
+            {
+                InventoryItem item = Inventory.Instance.allItems[i];
+                if (item == null || item.placeable == null) continue;
+                if (!tileToItem.ContainsKey(item.placeable.tileObjectId))
+                {
+                    tileToItem[item.placeable.tileObjectId] = i;
+                }
+            }
+
+            int tileObjectCount = 0;
+            for (int i = 0; i < WorldManager.Instance.allObjects.Length; i++)
+            {
+                TileObject tileObj = WorldManager.Instance.allObjects[i];
+                if (tileObj == null) continue;
+
+                int itemId;
+                bool hasItem = tileToItem.TryGetValue(tileObj.tileObjectId, out itemId);
+                string itemIdText = hasItem ? itemId.ToString() : "-";
+                string itemNameText = hasItem ? Inventory.Instance.allItems[itemId].itemName : "-";
+
+                sb.AppendLine("| " + tileObj.tileObjectId + " | " + tileObj.name + " | " + itemIdText + " | " + itemNameText + " |");
+                tileObjectCount++;
+            }
+
+            sb.AppendLine();
+            sb.AppendLine("*Total TileObjects found: " + tileObjectCount + "*");
+            sb.AppendLine();
+
             // Section 4: All Inventory Items
             sb.AppendLine("---");
             sb.AppendLine();
